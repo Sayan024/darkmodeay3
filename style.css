@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: white;
+    transition: 0.3s;
+}
+nav{
+    height: 60px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.links{
+    display:flex;
+    gap:100px;
+}
+#main p{
+    color: blue;
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: yellow;
+}
+h1{
+    color: yellow;
+}
+label{
+    width: 60px;
+    height: 30px;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    background-color: rgb(200, 255, 0);
+    box-shadow: 4px 3px 10px rgb(61, 0, 118), inset 0px 0px 10px rgba(255, 174, 0, 0.4);
+    transition: 0.3s;
+}
+.sun{
+    position: absolute;
+    z-index: 100;
+    top:7px;
+    right: 38px;
+    transition: 0.3s;
+    color: rgb(200, 255, 0);
+    cursor: pointer;
+}
+.moon{
+    position: absolute;
+    z-index: 100;
+    top:7px;
+    right: 10px;
+    transition: 0.3s;
+    color: rgb(200, 255, 0);
+    cursor: pointer;
+}
+label::after{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 26px;
+    background-image: linear-gradient(45deg,rgb(245, 2, 2),rgb(255, 0, 238));
+    background-size: contain;
+    top: 2px;
+    left: 2px;
+    border-radius: 20px ;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label{
+    background-color: rgb(0, 0, 0);
+    
+}
+input:checked ~ label .sun{
+    color: black;
+}
+input:checked + label:after {
+    
+    left: 7px;
+    transform: translateX(100%);
+}
+p{
+    padding: 100px;
+}
